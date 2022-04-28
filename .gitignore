@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Local configuration file (sdk path, etc)
+*.properties

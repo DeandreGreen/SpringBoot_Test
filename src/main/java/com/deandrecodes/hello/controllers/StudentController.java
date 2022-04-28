@@ -63,4 +63,9 @@ public class StudentController {
         studentService.delete(id);
         return "Deleted Student with id " + id;
     }
+
+    @RequestMapping("/hello")
+    public String hello(){
+        return "Hello World";
+    }
 }
