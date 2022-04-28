@@ -18,23 +18,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+//Student Request Controller
 @RestController
 @RequestMapping("/student")
 public class StudentController {
     @Autowired
     private StudentService studentService;
-
+    
+    //Post Mapping to creat a Student
     @PostMapping("/add")
     public String add (@RequestBody Student student){
         studentService.saveStudent(student);
         return "new student is added";
     }
 
+    //Get Mapping to retrieve all Students in database
     @GetMapping("/getAll")
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
 
+    //Get Mapping to retrieve one Student by its Id
     @GetMapping("/get/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable Integer id) {
         try {
@@ -46,6 +50,7 @@ public class StudentController {
         }
     }
 
+    //Put Mapping to update a Student that is already in the database
     @PutMapping("/update/{id}")
     public ResponseEntity<Student> update(@RequestBody Student student,@PathVariable Integer id) {
         try {
@@ -58,14 +63,11 @@ public class StudentController {
         }
     }
 
+    //Delete Mapping to delete a student by its Id
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Integer id) {
         studentService.delete(id);
         return "Deleted Student with id " + id;
     }
-
-    @RequestMapping("/hello")
-    public String hello(){
-        return "Hello World";
-    }
+    
 }

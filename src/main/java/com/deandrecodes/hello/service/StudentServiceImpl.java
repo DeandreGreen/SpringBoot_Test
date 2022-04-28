@@ -7,9 +7,11 @@ import com.deandrecodes.hello.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+//We mark beans with @Service to indicate that they're holding the business logic
 @Service
 public class StudentServiceImpl implements StudentService{
     
+    //marks a Constructor, Setter method, Properties and Config() method as to be autowired that is 'injecting beans'(Objects) at runtime by Spring Dependency Injection mechanism
     @Autowired
     private StudentRepository studentRepository;
 

@@ -7,9 +7,12 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
+//Student Model used to model a "Student" entity in database
 @Entity
+//Data Annotation is Used to remove the need for writing getters and setter
 @Data
 public class Student {
+    //Id's are generated and assigned as the parent Id of a Student
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,27 +22,4 @@ public class Student {
     public Student() {
     }
 
-    // public int getId() {
-    //     return id;
-    // }
-
-    // public void setId(int id) {
-    //     this.id = id;
-    // }
-
-    // public String getName(){
-    //     return name;
-    // }
-
-    // public void setName(String name) {
-    //     this.name = name;
-    // } 
-
-    // public String getAddress(){
-    //     return address;
-    // }
-
-    // public void setAdress(String address) {
-    //     this.address = address;
-    // } 
 }
